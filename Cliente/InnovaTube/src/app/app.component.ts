@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from "./shared/components/login/login.component";
-import { RegisterComponent } from "./shared/components/register/register.component";
+import { LayoutComponent } from './shared/layouts/layout/layout.component';
+import { ListadoBusquedaComponent } from './shared/components/listado-busqueda/listado-busqueda.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent, RegisterComponent],
+  imports: [RouterOutlet, LayoutComponent, ListadoBusquedaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
