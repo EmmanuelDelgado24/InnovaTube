@@ -24,10 +24,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    recaptchaToken: {
-      type: String,
-      required: true, // El token de ReCaptcha se validará del lado del backend
-    },
+    //recaptchaToken: {
+    //  type: String,
+    //  required: true, // El token de ReCaptcha se validará del lado del backend
+    //},
   },
   {
     timestamps: true,
