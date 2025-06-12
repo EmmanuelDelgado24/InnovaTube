@@ -58,3 +58,12 @@ export interface PageInfo {
     totalResults:   number;
     resultsPerPage: number;
 }
+
+export interface User {
+    id:           string;
+    nameCompleto: string;
+    nameUser:     string;
+    email:        string;
+    createdAt:    Date;
+    updatedAt:    Date;
+}

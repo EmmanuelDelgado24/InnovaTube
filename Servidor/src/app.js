@@ -1,7 +1,9 @@
 import morgan from 'morgan';
 import cors from 'cors';
 import express from 'express';
-import authRoutes from './routes/auth.routes.js';
+import  login  from './routes/login.routes.js'
+import  register  from './routes/register.routes.js';
+import logout from './routes/logout.routes.js'
 
 const app = express();// Inicializa la aplicación Express
 
@@ -14,5 +16,8 @@ app.use(cors({
 }))
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/api', authRoutes);
+app.use('/api', login);
+app.use('/api', register);
+app.use('/api', logout);
+
 export default app;
