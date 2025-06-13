@@ -6,9 +6,15 @@ export const registerUser = async (req, res) => {
   const { nameCompleto, nameUser, email, password, recaptchaToken } = req.body;
 
   try {
+    // 1. Verificar si el correo ya está registrado 
     const usuarioExiste = await User.findOne({ email });
     if (usuarioExiste) {
-      return res.status(400).json({ msg: "EL correo ya está registrado" });
+      return res.status(409).json({ msg: "EL correo electrónico ya está registrado" });
+    }
+
+    const nameUserExiste = await User.findOne({nameUser});
+    if (nameUserExiste) {
+      return res.status(409).json({ message: "El nombre de usuario ya está en uso." });
     }
 
     const passwordHash = await bcrypt.hash(password, 10);

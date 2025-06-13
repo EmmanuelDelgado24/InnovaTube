@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './iniciar-sesion.component.html',
   styleUrl: './iniciar-sesion.component.css'
 })
+
 export class IniciarSesionComponent {
   fr = inject(FormBuilder);
   hashError = signal(false);
