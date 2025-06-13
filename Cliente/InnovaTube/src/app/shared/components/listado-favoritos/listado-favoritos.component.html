@@ -1,1 +1,29 @@
-<p>listado-favoritos works!</p>
+<h2 class="my-6 text-2xl font-bold text-center text-gray-900 dark:text-white">Mis Videos Favoritos</h2>
+
+<div *ngIf="favoritosVideos.length === 0" class="mt-8 text-lg text-center text-gray-600 dark:text-gray-300">
+  Aún no tienes videos marcados como favoritos.
+</div>
+
+<div *ngIf="favoritosVideos.length > 0" class="grid grid-cols-1 gap-6 px-4 md:grid-cols-2 lg:grid-cols-3">
+  <div *ngFor="let video of favoritosVideos" class="overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <img [src]="video.snippet.thumbnails.high.url" [alt]="video.snippet.title" class="object-cover w-full h-48" />
+    <div class="p-4">
+      <h3 class="text-lg font-semibold text-gray-900 truncate dark:text-white">{{ video.snippet.title }}</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">{{ video.snippet.description }}</p>
+
+      <div class="flex items-center justify-between mt-3">
+        <button
+          (click)="openVideo(video.id.videoId)"
+          class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700">
+          Ver en YouTube
+        </button>
+
+        <button
+          (click)="removeFavorite(video.id.videoId)"
+          class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-500 rounded hover:bg-red-600">
+          Quitar de Favoritos
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

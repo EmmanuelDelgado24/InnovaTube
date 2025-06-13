@@ -5,6 +5,7 @@ import { YoutubeService} from '../../../services/youtube.service';
 import {ListadoResponse, Item} from '../../interfaces/lista.interfaces';
 import { FormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common'; //necesario para componentes independientes
+import { FavoritosService } from '../../../services/favorite.service';
 
 @Component({
   selector: 'app-listado-busqueda',
@@ -20,7 +21,10 @@ export class ListadoBusquedaComponent implements OnInit, OnChanges{
   loading = false;
   error = '';
   
-  constructor(private youtubeService: YoutubeService) { }
+  constructor(
+    private youtubeService: YoutubeService,
+    private favoritosService: FavoritosService
+  ) { }
 
   ngOnInit(): void {
     initFlowbite();
@@ -70,6 +74,16 @@ export class ListadoBusquedaComponent implements OnInit, OnChanges{
       }
     });
   }
+
+  isFavorito(videoId: string): boolean {
+    return this.favoritosService.isFavorito(videoId);
+  }
+
+  //
+  Favorito(video: Item): void {
+    this.favoritosService.Favorito(video);
+  }
+
 
   // Método para abrir video
   openVideo(videoId: string): void {
