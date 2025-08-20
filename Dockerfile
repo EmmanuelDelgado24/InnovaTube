@@ -14,3 +14,15 @@
     # Ahora copia TODO el código del servidor
     COPY Servidor/ ./
 
+    # Crear usuario innovatube y grupo nodejs
+
+    # Comando Linux: crear grupo
+    RUN addgroup -g 1001 -S nodejs        
+     # Comando Linux: crear usuario
+    RUN adduser -S innovatube -u 1001    
+
+    # Exponer puerto del servidor (ajusta según tu configuración)
+	EXPOSE 8080
+
+    # Arranque de la app
+    CMD ["npm", "start"]
