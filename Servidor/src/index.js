@@ -3,6 +3,7 @@ import app from "./app.js";
 import dbConnection from "./database/config.js";
 import axios from "axios";
 import path from "path";
+import express from "express";
 
 // Configurar dotenv
 dotenv.config();
