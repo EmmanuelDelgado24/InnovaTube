@@ -10,7 +10,7 @@ const app = express();// Inicializa la aplicación Express
 // Middleware de configuración global
 // Habilita CORS para permitir peticiones desde diferentes orígenes.
 app.use(cors({
-    origin: 'http://localhost:4200',
+    origin: 'https://innovatube-gfyl.onrender.com',
     methods: 'GET, POST, PUT, DELETE',
     allowedHeaders: 'Content-Type'
 }))
