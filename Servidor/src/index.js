@@ -35,7 +35,8 @@ app.get("/api/youtube/videos", async (req, res) => {
 
 
 // Ruta a la carpeta 'dist' de tu aplicación Angular
-const angularPath = path.join(__dirname, 'dist/innova-tube'); 
+// Usar process.cwd() y path.resolve para construir la ruta de manera segura
+const angularPath = path.resolve(process.cwd(), 'dist', 'innova-tube'); 
 
 // Sirve los archivos estáticos del frontend
 app.use(express.static(angularPath));
