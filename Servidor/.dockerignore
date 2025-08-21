@@ -1,0 +1,25 @@
+# Ignorar dependencias locales
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Ignorar archivos de entorno locales
+.env
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar carpetas de editor
+.vscode
+.idea
+
+# Ignorar carpetas de compilación locales (si las tienes)
+dist
+build
+tmp
+temp
+
+# Ignorar archivos que no necesitas en producción
+*.log
+*.md
