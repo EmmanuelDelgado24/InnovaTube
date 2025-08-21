@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import app from "./app.js";
 import dbConnection from "./database/config.js";
 import axios from "axios";
+import path from "path";
 
 // Configurar dotenv
 dotenv.config();
@@ -31,6 +32,19 @@ app.get("/api/youtube/videos", async (req, res) => {
     res.status(500).json({ error: "Error al obtener videos" });
   }
 });
+
+
+// Ruta a la carpeta 'dist' de tu aplicación Angular
+const angularPath = path.join(__dirname, 'dist/innova-tube'); 
+
+// Sirve los archivos estáticos del frontend
+app.use(express.static(angularPath));
+
+// Para las rutas que no sean de API, redirige a index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(angularPath, 'index.html'));
+});
+
 
 
 // Puerto del servidor
