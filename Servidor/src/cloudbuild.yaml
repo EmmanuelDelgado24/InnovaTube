@@ -1,0 +1,4 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'innova-tube', '--image=gcr.io/$PROJECT_ID/innova-tube', '--region=us-central1']
+  id: Deploy to Cloud Run
