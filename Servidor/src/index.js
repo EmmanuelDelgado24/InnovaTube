@@ -53,7 +53,7 @@ app.get('*', (req, res) => {
 const PORT = process.env.PORT || 8080;
 
 // Iniciar servidor
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor levantado en puerto ${PORT}`);
 });
 

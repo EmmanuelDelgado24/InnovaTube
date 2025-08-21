@@ -9,7 +9,7 @@ const app = express();
 
 // Orígenes permitidos (Render y local)
 const allowedOrigins = [
-  'https://innovatube-u371.onrender.com',
+  'https://innovatube-bcv9.onrender.com',
   'http://localhost:4200'
 ];
 
