@@ -2,7 +2,7 @@ import { computed, inject, Injectable, signal } from '@angular/core';
 import { UserResponse } from '../shared/interfaces/auth.interfaces';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../shared/interfaces/lista.interfaces';
-import { environment } from '../../environments/environment';
+import {environment} from '../../environments/environment.prod';
 import { catchError, map, Observable, of, tap, startWith } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
