@@ -7,7 +7,7 @@ import { ListadoResponse } from '../../app/shared/interfaces/lista.interfaces';
   providedIn: 'root',
 })
 export class YoutubeService {
-  private backendUrl = 'http://localhost:3000/api/youtube';
+  private backendUrl = 'https://servidor-692508046192.us-central1.run.app/api/youtube';
 
   constructor(private http: HttpClient) {}
 

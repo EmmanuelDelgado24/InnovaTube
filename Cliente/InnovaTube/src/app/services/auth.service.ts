@@ -50,7 +50,7 @@ export class AuthService {
         password: password,
       })
       .pipe(
-        tap((resp) => {
+        tap((resp: any) => {
           this._user.set(resp.user);
           this._authStatus.set('authenticated');
           this._token.set(resp.token);
@@ -77,7 +77,7 @@ export class AuthService {
         password: password,
       })
       .pipe(
-        tap((resp) => {
+        tap((resp: any) => {
           // Si el registro es exitoso, podrías querer loguear al usuario automáticamente
           // o simplemente indicar que se registró correctamente.
           // Para este ejemplo, lo loguearemos directamente.
@@ -110,7 +110,7 @@ export class AuthService {
         },
       })
       .pipe(
-        tap((resp) => {
+        tap((resp: any) => {
           this._user.set(resp.user);
           this._authStatus.set('authenticated');
           this._token.set(resp.token);

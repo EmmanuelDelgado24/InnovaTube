@@ -1,4 +1,4 @@
 export const environment = {
-    backUrl: "http://localhost:3000/api/login",
-    backUrl2: "http://localhost:3000/api/register"
+    backUrl: "https://servidor-692508046192.us-central1.run.app/api/login",
+    backUrl2: "https://servidor-692508046192.us-central1.run.app/api/register"
 }
