@@ -47,7 +47,15 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(angularPath, 'index.html'));
 });
 
-
+// Conectar a la base de datos
+// Conectar a la base de datos
+try {
+  dbConnection();
+  console.log("Paso 2: Conexión a la base de datos exitosa.");
+} catch (error) {
+  console.error("Paso 2 (Error): Falló la conexión a la base de datos.", error);
+  process.exit(1); // Opcional: Salir para que Cloud Run reinicie el contenedor
+}
 
 // Puerto del servidor
 const PORT = process.env.PORT || 8080;
@@ -57,5 +65,4 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor levantado en puerto ${PORT}`);
 });
 
-// Conectar a la base de datos
-dbConnection();
+
