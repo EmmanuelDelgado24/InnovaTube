@@ -12,7 +12,7 @@
     #Instalar dependencias como root (permisos completos
     # solo produccion = npm ci --only=production
     # "Limpia archivos temporales para ahorrar espacio" = npm cache clean --force
-    RUN npm ci --only=production && npm cache clean --force
+    RUN npm ci
 
     # Ahora copia TODO el código del servidor
     # Usamos un punto (.) para indicar que copie todos los archivos
