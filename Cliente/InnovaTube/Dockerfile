@@ -8,6 +8,7 @@
     # Copiar package.json y package-lock.json primero (para cache)
     COPY package*.json ./
 
+    #
     #Instalar dependencias como root (permisos completos
     # solo produccion = npm ci --only=production
     # "Limpia archivos temporales para ahorrar espacio" = npm cache clean --force
