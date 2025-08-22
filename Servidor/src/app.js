@@ -4,6 +4,7 @@ import express from 'express';
 import login from './routes/login.routes.js';
 import register from './routes/register.routes.js';
 import logout from './routes/logout.routes.js';
+import path from "path";
 
 const app = express();
 
@@ -34,7 +35,7 @@ app.use('/api', register);
 app.use('/api', logout);
 
 // Ruta raíz de prueba
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   res.json({ message: 'API de Innovatube funcionando 🚀' });
 });
 

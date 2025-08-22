@@ -3,14 +3,14 @@ import app from "./app.js";
 import dbConnection from "./database/config.js";
 import axios from "axios";
 import path from "path";
-import express from "express";
+//import express from "express";
 
 // Configurar dotenv
 dotenv.config();
 
 const YOUTUBE_BASE_URL = process.env.YOUTUBE_BASE_URL; 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
-const RECAPTCHA_SECRET= process.env.RECAPTCHA_SECRET;
+//const RECAPTCHA_SECRET= process.env.RECAPTCHA_SECRET;
 
 app.get("/api/youtube/videos", async (req, res) => {
   const searchQuery = req.query.q || "angular tutorial";
