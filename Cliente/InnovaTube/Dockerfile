@@ -1,7 +1,7 @@
 # ============================
 # Etapa 1: Build de Angular
 # ============================
-	FROM node:18.19.1-alpine3.15 AS build
+	FROM node:24-alpine3.21 AS build
 
 	WORKDIR /app
 
