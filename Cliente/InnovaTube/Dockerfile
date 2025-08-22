@@ -26,7 +26,7 @@
     RUN adduser -S innovatube -u 1001    
 
     # Generar la build de producción
-    RUN npx ng build --prod
+    RUN npx ng build 
 
 
 # ============================
