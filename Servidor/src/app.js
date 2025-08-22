@@ -1,10 +1,10 @@
+// app.js
 import morgan from 'morgan';
 import cors from 'cors';
 import express from 'express';
 import login from './routes/login.routes.js';
 import register from './routes/register.routes.js';
 import logout from './routes/logout.routes.js';
-import path from "path";
 
 const app = express();
 
