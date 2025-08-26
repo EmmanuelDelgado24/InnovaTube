@@ -34,7 +34,7 @@ app.get("/api/youtube/videos", async (req, res) => {
 // Servir Angular
 const angularPath = path.resolve(process.cwd(), 'dist', 'innova-tube');
 app.use(express.static(angularPath));
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(angularPath, 'index.html'));
 });
 
